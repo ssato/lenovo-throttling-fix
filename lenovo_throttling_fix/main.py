@@ -19,6 +19,7 @@ from threading import Event, Thread
 from .mmio import MMIO, MMIOError
 
 
+DEFAULT_CONF_PATH = "/etc/lenovo_throttling_fix.conf"
 DEFAULT_SYSFS_POWER_PATH = '/sys/class/power_supply/AC*/online'
 
 VOLTAGE_PLANES = {
@@ -461,7 +462,7 @@ def main():
 
     parser = argparse.ArgumentParser()
     parser.add_argument('--debug', action='store_true', help='add some debug info and additional checks')
-    parser.add_argument('--config', default='/etc/lenovo_fix.conf', help='override default config file path')
+    parser.add_argument('--config', default=DEFAULT_CONF_PATH, help='override default config file path')
     args = parser.parse_args()
 
     config = load_config()
