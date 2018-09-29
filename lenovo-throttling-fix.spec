@@ -52,7 +52,7 @@ Controller from resetting these values to default.
 %preun
 %systemd_preun lenovo_throttling_fix.service
 
-%postun server
+%postun
 %systemd_postun_with_restart lenovo_throttling_fix.service
 
 %files 
