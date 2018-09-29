@@ -1,4 +1,5 @@
 %global pname   lenovo_throttling_fix
+%global debug_package %{nil}
 
 Name:           lenovo-throttling-fix
 Summary:        Linux throttling fixes for Lenovo notebooks
@@ -10,7 +11,8 @@ License:        MIT
 #URL:            https://github.com/erpalma/lenovo-throttling-fix/
 # Use the following instead of the upstream because I modified a lot.
 URL:            https://github.com/ssato/lenovo-throttling-fix/
-Source0:        %{url}/archive/v%{version}.tar.gz
+#Source0:        %{url}/archive/v%{version}.tar.gz
+Source0:        %{pname}-%{version}.tar.gz
 # TODO: Find out real runtime depdendencies.
 Requires:       dbus-glib
 Requires:       gobject-introspection
@@ -26,6 +28,8 @@ BuildRequires:  python3-devel
 # ..seealso:: https://github.com/erpalma/lenovo-throttling-fix#thermald
 Conflicts:      thermald
 %{?systemd_requires}
+# It only works on Lenovo notebooks (x86_64 only).
+ExclusiveArch:  x86_64
 
 %description
 A workaround for Linux throttling issues on Lenovo T480 / T480s / X1C6
@@ -38,7 +42,7 @@ values in MSR and MCHBAR every 5 seconds (30 on battery) to block the Embedded
 Controller from resetting these values to default.
 
 %prep
-%autosetup
+%autosetup -n %{pname}-%{version}
 
 %build
 %py3_build
@@ -56,10 +60,11 @@ Controller from resetting these values to default.
 %systemd_postun_with_restart lenovo_throttling_fix.service
 
 %files 
-%doc README.Fedora
-%{_sysconfdir}/*.conf
-%{_unitdir}/*.service
-%{_unitdir}/*.timer
+%doc README.md
+%{_bindir}/*
+%{_sysconfdir}/*
+%{_unitdir}/*
+%{python3_sitelib}/*
 
 %changelog
 * Sun Sep 30 2018 Satoru SATOH <satoru.satoh@gmail.com> - 0.3-1
