@@ -1,0 +1,7 @@
+include LICENSE
+include MANIFEST.in
+include README.*
+include etc/*
+include setup.*
+include systemd/*
+recursive-include lenovo_throttling_fix *.py
