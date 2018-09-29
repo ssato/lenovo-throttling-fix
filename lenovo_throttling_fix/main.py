@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+from __future__ import absolute_import
 
 import argparse
 import configparser
@@ -13,9 +13,11 @@ from collections import defaultdict
 from dbus.mainloop.glib import DBusGMainLoop
 from errno import EACCES, EPERM
 from gi.repository import GLib
-from mmio import MMIO, MMIOError
 from multiprocessing import cpu_count
 from threading import Event, Thread
+
+from lenovo_throttling_fix.mmio import MMIO, MMIOError
+
 
 DEFAULT_SYSFS_POWER_PATH = '/sys/class/power_supply/AC*/online'
 
