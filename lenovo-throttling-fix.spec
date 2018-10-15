@@ -1,6 +1,6 @@
 %global pname   lenovo_throttling_fix
 %global debug_package %{nil}
-%global gittag  0.3-ss1-RELEASE
+%global gittag  0.3-ss2-RELEASE
 
 %if 0%{?fedora} || 0%{?rhel} > 7 || 0%{?epel} > 7
 %bcond_without python3
@@ -11,7 +11,7 @@
 Name:           lenovo-throttling-fix
 Summary:        Linux throttling fixes for Lenovo notebooks
 Version:        0.3
-Release:        ss1%{?dist}
+Release:        ss2%{?dist}
 Group:          Applications/Editors
 License:        MIT
 # Original upstream
@@ -113,6 +113,10 @@ chmod +x %{buildroot}/usr/bin/%{pname}
 %endif
 
 %changelog
+* Mon Oct 15 2018 Satoru SATOH <satoru.satoh@gmail.com> - 0.3-ss2
+- add dirty hacks to build it for EPEL7
+- some more minor packaging cleanups and changes
+
 * Mon Oct 15 2018 Satoru SATOH <satoru.satoh@gmail.com> - 0.3-ss1
 - some minor packaging cleanups
 - change revision
