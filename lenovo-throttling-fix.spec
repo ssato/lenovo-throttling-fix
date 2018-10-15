@@ -4,7 +4,7 @@
 Name:           lenovo-throttling-fix
 Summary:        Linux throttling fixes for Lenovo notebooks
 Version:        0.3
-Release:        1%{?dist}
+Release:        ss1%{?dist}
 Group:          Applications/Editors
 License:        MIT
 # Original upstream
@@ -67,5 +67,9 @@ Controller from resetting these values to default.
 %{python3_sitelib}/*
 
 %changelog
+* Mon Oct 15 2018 Satoru SATOH <satoru.satoh@gmail.com> - 0.3-ss1
+- some minor packaging cleanups
+- change revision
+
 * Sun Sep 30 2018 Satoru SATOH <satoru.satoh@gmail.com> - 0.3-1
 - Initial packaging
