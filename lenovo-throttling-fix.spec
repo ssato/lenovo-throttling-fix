@@ -1,5 +1,6 @@
 %global pname   lenovo_throttling_fix
 %global debug_package %{nil}
+%global gittag  0.3-ss1-RELEASE
 
 Name:           lenovo-throttling-fix
 Summary:        Linux throttling fixes for Lenovo notebooks
@@ -11,8 +12,7 @@ License:        MIT
 #URL:            https://github.com/erpalma/lenovo-throttling-fix/
 # Use the following instead of the upstream because I modified a lot.
 URL:            https://github.com/ssato/lenovo-throttling-fix/
-#Source0:        %{url}/archive/v%{version}.tar.gz
-Source0:        %{pname}-%{version}.tar.gz
+Source0:        %{url}/archive/%{gittag}/%{pname}-%{version}.tar.gz
 # TODO: Find out real runtime depdendencies.
 Requires:       dbus-glib
 Requires:       gobject-introspection
