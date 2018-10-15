@@ -10,7 +10,6 @@ DATA_FILES = [("/etc", ["etc/lenovo_throttling_fix.conf"]),
 
 
 setup(name=PACKAGE,
-      include_package_data=True,
       data_files=DATA_FILES)
 
 # vim:sw=4:ts=4:et:
