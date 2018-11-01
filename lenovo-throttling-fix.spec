@@ -37,6 +37,7 @@ Requires(preun): systemd
 Requires(postun): systemd
 BuildRequires:  dbus-glib-devel
 BuildRequires:  gobject-introspection-devel
+BuildRequires:  systemd
 %if %{with python3}
 BuildRequires:  python3-devel
 BuildRequires:  python3-setuptools
@@ -115,6 +116,7 @@ chmod +x %{buildroot}/usr/bin/%{pname}
 %changelog
 * Thu Nov  1 2018 Satoru SATOH <satoru.satoh@gmail.com> - 0.3-ss3
 - Rebuilt for Fedora 29 release and others
+- Add build time dependency to systemd provides a RPM macro
 
 * Mon Oct 15 2018 Satoru SATOH <satoru.satoh@gmail.com> - 0.3-ss2
 - add dirty hacks to build it for EPEL7
