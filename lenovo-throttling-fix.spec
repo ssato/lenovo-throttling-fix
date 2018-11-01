@@ -11,7 +11,7 @@
 Name:           lenovo-throttling-fix
 Summary:        Linux throttling fixes for Lenovo notebooks
 Version:        0.3
-Release:        ss2%{?dist}
+Release:        ss3%{?dist}
 Group:          Applications/Editors
 License:        MIT
 # Original upstream
@@ -113,6 +113,9 @@ chmod +x %{buildroot}/usr/bin/%{pname}
 %endif
 
 %changelog
+* Thu Nov  1 2018 Satoru SATOH <satoru.satoh@gmail.com> - 0.3-ss3
+- Rebuilt for Fedora 29 release and others
+
 * Mon Oct 15 2018 Satoru SATOH <satoru.satoh@gmail.com> - 0.3-ss2
 - add dirty hacks to build it for EPEL7
 - some more minor packaging cleanups and changes
